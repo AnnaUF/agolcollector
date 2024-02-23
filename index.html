@@ -23,9 +23,10 @@
             const view = new MapView({
             container: "viewDiv", // Reference to the DOM node that will contain the view
             map: map // References the map object
-            center: [2.3, 48.8], // Longitude, latitude
-            zoom: 10 // Zoom level
             });
+            // Sets the center point of the view at a specified lon/lat
+view.center = [2.3, 48.8];
+view.zoom = 13;  // Sets the zoom LOD to 13
          });
         </script>
 
