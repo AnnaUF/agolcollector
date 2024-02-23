@@ -13,7 +13,7 @@
 
 
     <script>
-        require([ "esri/config", "esri/Map", "esri/views/MapView", "esri/widgets/Locate", "esri/layers/FeatureLayer" ], (esriConfig, Map, MapView, Locate, FeatureLayer) => {
+        require([ "esri/config", "esri/Map", "esri/views/MapView", "esri/widgets/Locate", "esri/widgets/Search", "esri/layers/FeatureLayer" ], (esriConfig, Map, MapView, Locate, Search, FeatureLayer) => {
             //adding api key
             esriConfig.apiKey = "AAPKf617d57521304ebbbb1ccdfe0a6ab7c9xd9_fQk7Gvm5OOYXsPIGypnSnikFVt3o8pt2rZUIIvbSRkQvtGqxioqliq8SP6xH";
             
@@ -44,6 +44,15 @@ map.add(layer);
 view.center = [2.3, 48.8];
 view.zoom = 13;  // Sets the zoom LOD to 13
 
+const searchWidget = new Search({
+  view: view
+});
+// Adds the search widget below other elements in
+// the top left corner of the view
+view.ui.add(searchWidget, {
+  position: "top-left",
+  index: 2
+});
          });
         </script>
 
