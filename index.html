@@ -13,7 +13,7 @@
 
 
     <script>
-        require([ "esri/config", "esri/Map", "esri/views/MapView" ], (esriConfig, Map, MapView) => {
+        require([ "esri/config", "esri/Map", "esri/views/MapView", "esri/widgets/Locate" ], (esriConfig, Map, MapView, Locate) => {
             //adding api key
             esriConfig.apiKey = "AAPKf617d57521304ebbbb1ccdfe0a6ab7c9xd9_fQk7Gvm5OOYXsPIGypnSnikFVt3o8pt2rZUIIvbSRkQvtGqxioqliq8SP6xH";
             
@@ -24,9 +24,20 @@
             container: "viewDiv", // Reference to the DOM node that will contain the view
             map: map // References the map object
             });
+
+            const locateBtn = new Locate({
+          view: view
+        });
+
+        // Add the locate widget to the top left corner of the view
+        view.ui.add(locateBtn, {
+          position: "top-left"
+        });
+           
             // Sets the center point of the view at a specified lon/lat
 view.center = [2.3, 48.8];
 view.zoom = 13;  // Sets the zoom LOD to 13
+
          });
         </script>
 
